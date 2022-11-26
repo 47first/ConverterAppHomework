@@ -1,5 +1,6 @@
 ﻿using PhysicValuesLib.Values;
 using System.Reflection;
+using System.Windows;
 
 namespace PhysicValuesLib;
 
@@ -40,12 +41,10 @@ public class ConverterManager
             if (value.GetValueName() == valueName)
             {
                 _myValue = value;
-            }
-            else
-            {
-                throw new Exception("Ошибка! В библиотеке нет такой величины");
+                return;
             }
         }
+        throw new Exception("Ошибка! В библиотеке нет такой величины");
     }
 
     public List<string> GetPhysicValuesList()
